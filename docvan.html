@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đọc đoạn văn</title>
+  <style>
+    body {
+      background: #202020;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      text-align: center;
+    }
+    .box {
+      background: rgba(0,0,0,0.6);
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: auto;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      background-color: #FFD700;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>📖 Đoạn văn</h2>
+  <p id="noidung">Giao diện hiện đại, trực quan, tương thích nhiều thiết bị.</p>
+  <button onclick="docVan()">🔊 Đọc nội dung</button>
+</div>
+
+<script>
+  function docVan() {
+    const text = document.getElementById("noidung").innerText;
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "vi-VN"; // Tiếng Việt
+    window.speechSynthesis.speak(utterance);
+  }
+</script>
+
+</body>
+</html>
